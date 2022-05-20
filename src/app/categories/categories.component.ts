@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from '../models/product.model';
 import { ProductsService } from '../products/products.service';
 import { CategoriesService } from './categories.service';
 
@@ -10,6 +11,7 @@ import { CategoriesService } from './categories.service';
 })
 export class CategoriesComponent implements OnInit {
   categories$: Observable<string[]>;
+  @Output() requestedProducts = new EventEmitter<Observable<Product[]>>();
 
   constructor(
     private categoriesService: CategoriesService,
@@ -22,9 +24,9 @@ export class CategoriesComponent implements OnInit {
 
   getProductsByCategory(selectedCategory: string): void{
     if(selectedCategory == 'All'){
-      this.productsService.getAllProducts$().subscribe();
+      this.requestedProducts.emit(this.productsService.getAllProducts$());
     }else{
-      this.categoriesService.getProductsByCategory$(selectedCategory).subscribe();
+      this.requestedProducts.emit(this.productsService.getProductsByCategory$(selectedCategory));
     }
   }
 
