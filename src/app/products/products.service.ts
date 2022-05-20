@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
@@ -14,5 +14,9 @@ export class ProductsService {
 
   getAllProducts$(): Observable<Product[]>{
     return this.http.get<Product[]>('https://fakestoreapi.com/products');
+  }
+  
+  getProductsByCategory$(selectedCategory: string): Observable<Product[]>{
+    return this.http.get<Product[]>(`https://fakestoreapi.com/products/category/${selectedCategory}`);
   }
 }
