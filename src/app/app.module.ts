@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ProductWrapperComponent } from './product-wrapper/product-wrapper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductWrapperComponent
+    ProductWrapperComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
