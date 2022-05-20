@@ -14,13 +14,15 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsService } from './products/products.service';
 import { CategoriesService } from './categories/categories.service';
+import { ProductProfileComponent } from './product-profile/product-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductWrapperComponent,
     ProductsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ProductProfileComponent
   ],
   imports: [
     BrowserModule,
