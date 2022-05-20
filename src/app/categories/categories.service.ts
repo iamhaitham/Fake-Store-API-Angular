@@ -16,4 +16,7 @@ export class CategoriesService {
     return this.http.get<string[]>('https://fakestoreapi.com/products/categories');
   } 
   
+  getProductsByCategory$(selectedCategory: string): Observable<Category[]>{
+    return this.http.get<Category[]>(`https://fakestoreapi.com/products/category/${selectedCategory}`);
+  }
 }
