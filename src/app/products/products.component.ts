@@ -9,6 +9,7 @@ import { ProductsService } from './products.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+  @Input()
   products$: Observable<Product[]>;
 
   constructor(
@@ -17,6 +18,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.products$ = this.productsService.getAllProducts$();
+  }
+
+  displayRequestedProducts(products$: Observable<Product[]>){
+    this.products$ = products$; 
   }
 
 }
