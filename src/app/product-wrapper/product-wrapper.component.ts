@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'product-wrapper',
@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-wrapper.component.css']
 })
 export class ProductWrapperComponent implements OnInit {
+  @Input()
+  productTitle: string;
 
-  constructor() { }
+  @Input()
+  productPrice: number;
+  
+  constructor() {
+    this.productTitle = "";
+    this.productPrice = 0;
+   }
 
   ngOnInit(): void {
   }
