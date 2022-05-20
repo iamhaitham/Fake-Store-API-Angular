@@ -15,6 +15,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ProductsService } from './products/products.service';
 import { CategoriesService } from './categories/categories.service';
 import { ProductProfileComponent } from './product-profile/product-profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductProfileComponent } from './product-profile/product-profile.compo
     ProductWrapperComponent,
     ProductsComponent,
     CategoriesComponent,
-    ProductProfileComponent
+    ProductProfileComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
