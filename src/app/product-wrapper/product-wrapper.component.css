@@ -1,0 +1,23 @@
+.product-wrapper-card {
+    max-width: 250px;
+    max-height: 550px;
+}
+
+mat-card-header{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.mat-card-image:first-child{
+  margin-top: 0;
+}
+
+.product-wrapper-image{
+  max-width: 240px;
+  max-height: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
