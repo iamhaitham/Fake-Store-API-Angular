@@ -2,11 +2,11 @@
   <img mat-card-image class="product-wrapper-image" src="{{product.image}}" alt="{{product.title}}">
   <mat-card-header class="product-wrapper-info">
     <mat-card-title *ngIf="product.title.length<25; else slicedProductTitle">
-        <a routerLink="/products/{{product.id}}">{{product.title}}</a>
+        <a class="productTitle" routerLink="/products/{{product.id}}">{{product.title}}</a>
     </mat-card-title>
     <ng-template #slicedProductTitle>
       <mat-card-title>
-        <a routerLink="/products/{{product.id}}">{{product.title.slice(0,25)+"..."}}</a>
+        <a class="productTitle" routerLink="/products/{{product.id}}">{{product.title.slice(0,25)+"..."}}</a>
      </mat-card-title>
     </ng-template>
     <mat-card-subtitle>${{product.price}}</mat-card-subtitle>
