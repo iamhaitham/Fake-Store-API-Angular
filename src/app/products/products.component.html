@@ -1,1 +1,7 @@
-<p>products works!</p>
+<mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let product of (products$|async)">
+        <product-wrapper 
+            [product]="product"
+        ></product-wrapper>
+    </mat-grid-tile>
+</mat-grid-list>
