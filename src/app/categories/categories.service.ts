@@ -12,8 +12,8 @@ export class CategoriesService {
       private http: HttpClient
   ) { }
 
-  getAllCategories$(): Observable<Category[]>{
-    return this.http.get<Category[]>('https://fakestoreapi.com/products/categories');
+  getAllCategories$(): Observable<string[]>{
+    return this.http.get<string[]>('https://fakestoreapi.com/products/categories');
   } 
   
 }
