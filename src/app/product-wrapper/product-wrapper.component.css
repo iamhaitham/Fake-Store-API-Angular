@@ -1,6 +1,6 @@
 .product-wrapper-card {
     max-width: 250px;
-    max-height: 550px;
+    height: 300px;
 }
 
 mat-card-header{
@@ -16,8 +16,8 @@ mat-card-header{
 }
 
 .product-wrapper-image{
-  max-width: 240px;
-  max-height: 520px;
+  max-width: 200px;
+  height: 180px;
   margin-left: auto;
   margin-right: auto;
 }
