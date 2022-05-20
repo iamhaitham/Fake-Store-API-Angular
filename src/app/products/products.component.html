@@ -1,3 +1,4 @@
+<categories (requestedProducts)="displayRequestedProducts($event)"></categories>
 <mat-grid-list cols="4" rowHeight="1.05:1">
     <mat-grid-tile *ngFor="let product of (products$|async)">
         <product-wrapper 
