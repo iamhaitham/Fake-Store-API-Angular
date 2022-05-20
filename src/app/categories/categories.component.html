@@ -1,8 +1,13 @@
-<mat-tab-group [backgroundColor]="'primary'">
-    <mat-tab label="All"></mat-tab>
-    <<mat-tab 
-        *ngFor="let category of (categories$|async)" 
-        label="{{category}}">
-        Do I add the filtered result here???
-    </mat-tab>>
+<mat-tab-group 
+    [backgroundColor]="'primary'"
+    (selectedTabChange)="getProductsByCategory($event.tab.textLabel)">
+        <mat-tab 
+            label="All">
+        </mat-tab>
+        <mat-tab 
+            *ngFor="let category of (categories$|async)" 
+            label="{{category}}"
+            >
+            Do I add the filtered result here???
+        </mat-tab>
 </mat-tab-group>
