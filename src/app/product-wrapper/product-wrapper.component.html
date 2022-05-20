@@ -1,5 +1,5 @@
 <mat-card class="product-wrapper-card">
-  <img mat-card-image class="product-wrapper-image" src="{{product.image}}" alt="Photo of a Shiba Inu">
+  <img mat-card-image class="product-wrapper-image" src="{{product.image}}" alt="{{product.title}}">
   <mat-card-header class="product-wrapper-info">
     <mat-card-title *ngIf="product.title.length<25; else slicedProductTitle">
         {{product.title}}
