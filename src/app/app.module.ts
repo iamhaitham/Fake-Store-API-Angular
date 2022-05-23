@@ -16,6 +16,7 @@ import { ProductsService } from './products/products.service';
 import { CategoriesService } from './categories/categories.service';
 import { ProductProfileComponent } from './product-profile/product-profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule,
     LayoutModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     ProductsService,
