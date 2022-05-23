@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "fake-store-api"
+  "defaultProject": "fake-store-api",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
