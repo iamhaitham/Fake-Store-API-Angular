@@ -17,6 +17,8 @@ import { CategoriesService } from './categories/categories.service';
 import { ProductProfileComponent } from './product-profile/product-profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { StoreModule } from '@ngrx/store';
     LayoutModule,
     MatGridListModule,
     MatTabsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
     ProductsService,
