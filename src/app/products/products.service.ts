@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
-import { ProductsActions } from './products.actions';
-import { productsState } from './products.reducer';
-import { ProductsSelectors } from './products.selectors';
+import { ProductsActions, ProductsSelectors, productsState } from './store';
 
 @Injectable({
   providedIn: 'root'

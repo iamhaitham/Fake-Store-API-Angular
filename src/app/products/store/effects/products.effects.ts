@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, of } from 'rxjs';
-import { Product } from '../models/product.model';
-import { ProductsActions } from './products.actions';
+import { Product } from 'src/app/models/product.model';
+import { ProductsActions } from '..';
 
 @Injectable()
 export class ProductsEffects {

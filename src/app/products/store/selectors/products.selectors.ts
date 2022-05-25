@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { productsFeatureKey, productsState } from './products.reducer';
+import { productsFeatureKey, productsState } from '..';
 
 export const productsSelectFeature = createFeatureSelector<productsState>(productsFeatureKey);
  
@@ -20,6 +20,3 @@ export class ProductsSelectors{
         (state: productsState) => state.data
     );
 }
-
-
-
