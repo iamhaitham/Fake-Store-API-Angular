@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
+import { productsState } from './products.reducer';
+import { ProductsSelectors } from './products.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +11,13 @@ import { Product } from '../models/product.model';
 export class ProductsService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private store: Store<productsState>
   ) { }
 
-  getAllProducts$(): Observable<Product[]>{
-    return this.http.get<Product[]>('https://fakestoreapi.com/products');
+
+  loading$(): Observable<boolean> {
+    return this.store.select(ProductsSelectors.loading);
   }
   
   getProductsByCategory$(selectedCategory: string): Observable<Product[]>{

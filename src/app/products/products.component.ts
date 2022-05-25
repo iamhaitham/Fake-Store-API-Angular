@@ -18,7 +18,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
   constructor(
     private productsService: ProductsService,
     private breakpointObserver: BreakpointObserver
-  ) { }
+  ) { 
+    this.productsService.loadProducts$();
+  }
 
   ngOnInit(): void {
     this.breakpointObserver.observe([
@@ -45,7 +47,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
         }
       }
     );
-    this.products$ = this.productsService.getAllProducts$();
+    this.loading$ = this.productsService.loading$();
   }
 
   displayRequestedProducts(products$: Observable<Product[]>){
