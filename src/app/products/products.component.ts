@@ -47,6 +47,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
         }
       }
     );
+    
+    this.products$ = this.productsService.products$();
     this.loading$ = this.productsService.loading$();
   }
 
