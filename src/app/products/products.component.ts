@@ -12,6 +12,7 @@ import { ProductsService } from './products.service';
 export class ProductsComponent implements OnInit, OnDestroy {
   @Input()
   products$: Observable<Product[]>;
+  loading$: Observable<boolean>;
   columnsNumber: number;
   destroyed$: Subject<boolean> = new Subject<boolean>();
 
