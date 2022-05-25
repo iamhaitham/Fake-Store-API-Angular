@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
+import { ProductsActions } from './products.actions';
 import { productsState } from './products.reducer';
 import { ProductsSelectors } from './products.selectors';
 
@@ -16,6 +17,13 @@ export class ProductsService {
     private store: Store<productsState>
   ) { }
 
+  loadProducts$(): void{
+    this.store.dispatch(ProductsActions.LOAD_PRODUCTS());
+  }
+
+  products$(): Observable<Product[]> {
+    return this.store.select(ProductsSelectors.data);
+  }
 
   loading$(): Observable<boolean> {
     return this.store.select(ProductsSelectors.loading);
