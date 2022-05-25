@@ -1,8 +1,13 @@
 <categories (requestedProducts)="displayRequestedProducts($event)"></categories>
-<mat-grid-list cols="{{columnsNumber}}" rowHeight="350px">
-    <mat-grid-tile *ngFor="let product of (products$|async)">
-        <product-wrapper 
-            [product]="product">
-        </product-wrapper>
-    </mat-grid-tile>
-</mat-grid-list>
+
+<mat-progress-bar mode="indeterminate" *ngIf="(loading$|async);else products"></mat-progress-bar>
+
+<ng-template #products>
+    <mat-grid-list cols="{{columnsNumber}}" rowHeight="350px">
+        <mat-grid-tile *ngFor="let product of (products$|async)">
+            <product-wrapper 
+                [product]="product">
+            </product-wrapper>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-template>
