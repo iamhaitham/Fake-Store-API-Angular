@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil, tap } from 'rxjs';
 import { Product } from '../models/product.model';
 import { ProductsService } from './products.service';
@@ -10,7 +10,6 @@ import { ProductsService } from './products.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-  @Input()
   products$: Observable<Product[]>;
   loading$: Observable<boolean>;
   columnsNumber: number;
