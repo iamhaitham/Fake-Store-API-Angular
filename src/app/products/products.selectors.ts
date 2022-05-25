@@ -1,33 +1,23 @@
-import { createSelector } from '@ngrx/store';
-import { Product } from '../models/product.model';
- 
-export interface productsFeatureState {
-    loading: boolean;
-    errorMessage: string;
-    data: Product[];
-}
- 
-export interface productsState {
-  feature: productsFeatureState;
-}
- 
-export const productsSelectFeature = (state: productsState) => state.feature;
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { productsFeatureKey, productsState } from './products.reducer';
+
+export const productsSelectFeature = createFeatureSelector<productsState>(productsFeatureKey);
  
 export class ProductsSelectors{
 
     static readonly loading = createSelector(
         productsSelectFeature,
-        (state: productsFeatureState) => state.loading
+        (state: productsState) => state.loading
     );
 
     static readonly errorMessage = createSelector(
         productsSelectFeature,
-        (state: productsFeatureState) => state.errorMessage
+        (state: productsState) => state.errorMessage
     );
 
     static readonly data = createSelector(
         productsSelectFeature,
-        (state: productsFeatureState) => state?.data
+        (state: productsState) => state.data
     );
 }
 
