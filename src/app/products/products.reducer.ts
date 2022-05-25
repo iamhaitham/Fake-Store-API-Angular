@@ -2,7 +2,6 @@ import { createReducer, on } from '@ngrx/store';
 import { Product } from '../models/product.model';
 import { ProductsActions } from './products.actions';
 
-
 export const productsFeatureKey = 'products';
 
 export interface productsState {
