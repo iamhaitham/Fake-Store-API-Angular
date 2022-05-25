@@ -20,6 +20,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import * as fromProducts from './products/products.reducer';
+import { ProductsEffects } from './products/products.effects';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
@@ -42,6 +44,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatTabsModule,
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([ProductsEffects]),
+    StoreModule.forFeature(fromProducts.productsFeatureKey, fromProducts.productsReducer),
     MatProgressBarModule
   ],
   providers: [
