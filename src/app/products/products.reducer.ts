@@ -5,13 +5,13 @@ import { ProductsActions } from './products.actions';
 
 export const productsFeatureKey = 'products';
 
-export interface State {
+export interface productsState {
   loading: boolean;
   errorMessage: string;
   data: Product[];
 }
 
-export const initialState: State = {
+export const initialState: productsState = {
   loading: false,
   errorMessage: '',
   data: [] as Product[]
