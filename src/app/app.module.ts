@@ -10,7 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsService } from './products/products.service';
 import { CategoriesService } from './categories/categories.service';
