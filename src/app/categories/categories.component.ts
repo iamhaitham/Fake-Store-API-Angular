@@ -24,7 +24,7 @@ export class CategoriesComponent implements OnInit {
 
   getProductsByCategory(selectedCategory: string): void{
     if(selectedCategory == 'All'){
-      this.requestedProducts.emit(this.productsService.getAllProducts$());
+      this.requestedProducts.emit(this.productsService.products$());
     }else{
       this.requestedProducts.emit(this.productsService.getProductsByCategory$(selectedCategory));
     }
