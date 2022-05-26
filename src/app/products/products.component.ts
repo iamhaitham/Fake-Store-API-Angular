@@ -43,7 +43,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
         ){
           this.columnsNumber = 2;
         }else{
-          this.columnsNumber = 4;
+          this.columnsNumber = 5;
         }
       }
     );
