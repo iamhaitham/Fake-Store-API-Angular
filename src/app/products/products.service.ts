@@ -25,7 +25,7 @@ export class ProductsService {
         (products: Product[]) => 
           categoryName == 'All' ? 
           products : 
-          products.filter((p: Product) => p.category == categoryName))
+          products.filter((p: Product) => p.category === categoryName))
     );
   }
 
