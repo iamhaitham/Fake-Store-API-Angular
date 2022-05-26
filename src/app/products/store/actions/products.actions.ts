@@ -16,8 +16,4 @@ export class ProductsActions {
     '[Products] Load Products: Failure',
     props<{ errorMessage: string }>()
   ); 
-
-    props<{ errorMessage: string }>()
-  ); 
-
 }
