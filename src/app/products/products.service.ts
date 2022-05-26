@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 import { ProductsActions, ProductsSelectors, productsState } from './store';
 
@@ -19,15 +19,17 @@ export class ProductsService {
     this.store.dispatch(ProductsActions.LOAD_PRODUCTS());
   }
 
-  products$(): Observable<Product[]> {
-    return this.store.select(ProductsSelectors.data);
+  products$(categoryName: string): Observable<Product[]> {
+    return this.store.select(ProductsSelectors.data).pipe(
+      map(
+        (products: Product[]) => 
+          categoryName == 'All' ? 
+          products : 
+          products.filter((p: Product) => p.category == categoryName))
+    );
   }
 
   loading$(): Observable<boolean> {
     return this.store.select(ProductsSelectors.loading);
-  }
-  
-  getProductsByCategory$(selectedCategory: string): Observable<Product[]>{
-    return this.http.get<Product[]>(`https://fakestoreapi.com/products/category/${selectedCategory}`);
   }
 }
