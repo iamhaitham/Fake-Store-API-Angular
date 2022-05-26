@@ -1,6 +1,6 @@
 <categories (requestedProducts)="displayRequestedProducts($event)"></categories>
 
-<mat-progress-bar mode="indeterminate" *ngIf="(loading$|async);else products"></mat-progress-bar>
+<mat-spinner *ngIf="(loading$|async);else products" [diameter]="50"></mat-spinner>
 
 <ng-template #products>
     <mat-grid-list cols="{{columnsNumber}}" rowHeight="350px">

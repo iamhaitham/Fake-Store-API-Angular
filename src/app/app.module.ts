@@ -20,8 +20,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ProductsEffects, productsFeatureKey, productsReducer } from './products/store';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { ProductsEffects, productsFeatureKey, productsReducer } from './products
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([ProductsEffects]),
     StoreModule.forFeature(productsFeatureKey, productsReducer),
-    MatProgressBarModule
+    MatProgressSpinnerModule
   ],
   providers: [
     ProductsService,
