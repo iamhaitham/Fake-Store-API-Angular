@@ -15,7 +15,7 @@ export class ProductsService {
     private store: Store<productsState>
   ) { }
 
-  loadProducts$(): void{
+  loadProducts$(): void {
     this.store.dispatch(ProductsActions.LOAD_PRODUCTS());
   }
 
