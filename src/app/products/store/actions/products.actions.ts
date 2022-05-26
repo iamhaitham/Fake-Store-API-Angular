@@ -4,16 +4,19 @@ import { Product } from '../../../models/product.model';
 export class ProductsActions {
 
   static readonly LOAD_PRODUCTS = createAction(
-    '[Products] Load Productss'
+    '[Products] Load Products'
   );
   
   static readonly LOAD_PRODUCTS_SUCCESS = createAction(
-    '[Products] Load Productss: Success',
+    '[Products] Load Products: Success',
     props<{ data: Product[] }>()
   );
   
   static readonly LOAD_PRODUCTS_FAILURE = createAction(
-    '[Products] Load Productss: Failure',
+    '[Products] Load Products: Failure',
+    props<{ errorMessage: string }>()
+  ); 
+
     props<{ errorMessage: string }>()
   ); 
 
