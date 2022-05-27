@@ -25,6 +25,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getProductsByCategory(selectedCategory: string): void{
+    this.categoriesService.setCategory$(selectedCategory);
     this.requestedProducts.emit(this.productsService.products$(selectedCategory));
   }
 
