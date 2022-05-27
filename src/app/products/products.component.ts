@@ -57,6 +57,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.products$ = products$; 
   }
 
+  findProductByName(productName: string): void {
+    this.products$ = this.productsService.findProductByName(productName);
+  }
+
   ngOnDestroy(): void {
     this.destroyed$.next(true);
     this.destroyed$.complete();
