@@ -4,10 +4,18 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+body {
+    background-color: hwb(330deg 79% 20%);
+}
+
 .mat-card-header-text{
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+
+.mat-tab-group.mat-background-primary>.mat-tab-header, .mat-tab-group.mat-background-primary>.mat-tab-link-container, .mat-tab-group.mat-background-primary>.mat-tab-header-pagination, .mat-tab-nav-bar.mat-background-primary>.mat-tab-header, .mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container, .mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination{
+    background-color: rgb(48 42 51);
 }

@@ -11,6 +11,11 @@ mat-card-header{
   align-content: center;
 }
 
+
+.mat-card {
+  background-color: hwb(255deg 25% 69%);
+}
+
 .mat-card-image:first-child{
   margin-top: 0;
 }
