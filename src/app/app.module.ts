@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffects, productsFeatureKey, productsReducer } from './products/store';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ProductsComponent,
     CategoriesComponent,
     ProductProfileComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
