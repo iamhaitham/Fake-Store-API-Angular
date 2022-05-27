@@ -23,6 +23,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffects, productsFeatureKey, productsReducer } from './products/store';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([ProductsEffects]),
     StoreModule.forFeature(productsFeatureKey, productsReducer),
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductsService,
