@@ -17,4 +17,12 @@ export class CategoriesService {
   categories$(): Observable<string[]> {
     return this.store.select(CategoriesSelectors.data);
   }
+
+  setCategory$(categoryName: string): void {
+    this.store.dispatch(CategoriesActions.SET_CATEGORY({ categoryName }));
+  }
+
+  categoryName$(): Observable<string> {
+    return this.store.select(CategoriesSelectors.categoryName);
+  }
 }
