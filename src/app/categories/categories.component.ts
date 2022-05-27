@@ -16,10 +16,12 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private categoriesService: CategoriesService,
     private productsService: ProductsService
-  ) { }
+  ) { 
+    this.categoriesService.loadAllCategories$();
+  }
 
   ngOnInit(): void {
-    this.categories$ = this.categoriesService.getAllCategories$();
+    this.categories$ = this.categoriesService.categories$();
   }
 
   getProductsByCategory(selectedCategory: string): void{
