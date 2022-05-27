@@ -37,11 +37,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
           result.breakpoints[Breakpoints.XSmall]
         ){
           this.columnsNumber = 1;
+        }else if(result.breakpoints[Breakpoints.Small]){
+          this.columnsNumber = 2;
         }else if(
-          result.breakpoints[Breakpoints.Small] || 
           result.breakpoints[Breakpoints.Medium]
         ){
-          this.columnsNumber = 2;
+          this.columnsNumber = 3;
         }else{
           this.columnsNumber = 5;
         }
