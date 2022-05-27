@@ -25,6 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatIconModule } from '@angular/material/icon';
     StoreModule.forFeature(productsFeatureKey, productsReducer),
     MatProgressSpinnerModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [
     ProductsService,
