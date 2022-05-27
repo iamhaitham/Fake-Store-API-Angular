@@ -9,4 +9,9 @@ export class CategoriesSelectors {
         productsSelectFeature,
       (state: categoriesState) => state.categoryName
     );
+
+    static readonly data = createSelector(
+        productsSelectFeature,
+      (state: categoriesState) => state.data
+    );
 }
