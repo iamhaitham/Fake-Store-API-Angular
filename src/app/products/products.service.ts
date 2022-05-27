@@ -29,6 +29,15 @@ export class ProductsService {
     );
   }
 
+  findProductByName(productName: string): Observable<Product[]> {
+    return this.store.select(ProductsSelectors.data).pipe(
+      map(
+        (products: Product[]) => 
+        products.filter((p: Product) => (p.title.toLowerCase()).includes(productName.toLowerCase()))
+      )
+    )
+  }
+
   loading$(): Observable<boolean> {
     return this.store.select(ProductsSelectors.loading);
   }
