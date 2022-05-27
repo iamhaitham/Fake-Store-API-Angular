@@ -24,6 +24,7 @@ import { ProductsEffects, productsFeatureKey, productsReducer } from './products
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MatInputModule } from '@angular/material/input';
     EffectsModule.forRoot([ProductsEffects]),
     StoreModule.forFeature(productsFeatureKey, productsReducer),
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [
     ProductsService,
