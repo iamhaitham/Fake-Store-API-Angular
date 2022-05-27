@@ -45,7 +45,7 @@ export class ProductsService {
     combineLatest([selectedCategory$, productsByName$]).pipe( // I want to filter the products in the ngrx store (observable 1) based on the categoryName that is also in the store (observable2), so I need the 'combineLatest' operator.
       tap(([categoryName, products]) => productsByNameAndCategory$.next(
         categoryName !== 'All' ? 
-          products.filter((product: Product) => product.category.toLowerCase().includes(categoryName))
+          products.filter((product: Product) => product.category.toLowerCase() === categoryName)
           : products
       )
       ),take(1) // I have used the 'take' operator to unsubscribe from the observable.
