@@ -3,7 +3,7 @@
 <mat-spinner *ngIf="(loading$|async);else products" [diameter]="50"></mat-spinner>
 
 <ng-template #products>
-    <search-bar></search-bar>
+    <search-bar (findProductByName$)="findProductByName($event)"></search-bar>
 
     <mat-grid-list cols="{{columnsNumber}}" rowHeight="350px">
         <mat-grid-tile *ngFor="let product of (products$|async)">
