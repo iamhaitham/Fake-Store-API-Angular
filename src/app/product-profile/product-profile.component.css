@@ -1,0 +1,38 @@
+#productProfile{
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+}
+
+#productProfile > img { 
+    width: 250px;
+    height: 250px;
+    margin-top: 2%;
+}
+
+#currentProductInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+#currentProductInfo > p {
+    width: 80%;
+}
+
+mat-spinner {
+    position: absolute;
+    left: 45%;
+    top: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+    #productProfile {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #currentProductInfo { 
+        align-items: center;
+    }
+}
