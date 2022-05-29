@@ -25,6 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriesEffects, categoriesFeatureKey, categoriesReducer } from './categories/store';
+import { ProductProfileEffects, productProfileFeatureKey, productProfileReducer } from './product-profile/store';
 
 @NgModule({
   declarations: [
@@ -47,11 +48,12 @@ import { CategoriesEffects, categoriesFeatureKey, categoriesReducer } from './ca
     MatTabsModule,
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([ProductsEffects, CategoriesEffects]),
+    EffectsModule.forRoot([ProductsEffects, CategoriesEffects, ProductProfileEffects]),
     StoreModule.forFeature(productsFeatureKey, productsReducer),
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(categoriesFeatureKey, categoriesReducer)
+    StoreModule.forFeature(categoriesFeatureKey, categoriesReducer),
+    StoreModule.forFeature(productProfileFeatureKey, productProfileReducer)
   ],
   providers: [
     ProductsService,
