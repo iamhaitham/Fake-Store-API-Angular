@@ -1,1 +1,13 @@
-<p>product-profile works!</p>
+<mat-spinner *ngIf="(loading$|async);else product" [diameter]="50"></mat-spinner>
+
+<ng-template #product >
+    <article id="productProfile" *ngIf="(product$|async) as product">
+        <section id="currentProductInfo">
+            <h1>{{product.title}}</h1>
+            <h3>{{product.price}}</h3>
+            <h3>{{product.category}}</h3>
+            <p>{{product.description}}</p>
+        </section>
+        <img src="{{product.image}}" alt="{{product.title}}">
+    </article>
+</ng-template>
