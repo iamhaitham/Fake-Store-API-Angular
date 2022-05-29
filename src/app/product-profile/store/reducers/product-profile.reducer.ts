@@ -12,13 +12,16 @@ export interface ProductProfileState {
 }
 
 export const initialState: ProductProfileState = {
-  loading: true,
+  loading: false,
   errorMessage: '',
   data: {} as Product
 };
 
 export const productProfileReducer = createReducer(
   initialState,
+  on(ProductProfileActions.LOAD_PRODUCT, 
+    (state) => ({ ...state, loading: true })
+  ),
   on(ProductProfileActions.LOAD_PRODUCT_SUCCESS, 
     (state, { data }) => ({ ...state, loading: false, data })
   ),
