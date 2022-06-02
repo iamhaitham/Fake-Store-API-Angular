@@ -28,6 +28,8 @@ import { CategoriesEffects, categoriesFeatureKey, categoriesReducer } from './ca
 import { ProductProfileEffects, productProfileFeatureKey, productProfileReducer } from './product-profile/store';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule } from '@angular/material/button';
+import { loginFeatureKey, loginReducer } from './login/store';
+import { LoginEffects } from './login/store/effects/login.effects';
 
 @NgModule({
   declarations: [
@@ -51,12 +53,14 @@ import { MatButtonModule } from '@angular/material/button';
     MatTabsModule,
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([ProductsEffects, CategoriesEffects, ProductProfileEffects]),
+    EffectsModule.forRoot([ProductsEffects, CategoriesEffects, ProductProfileEffects, LoginEffects]),
     StoreModule.forFeature(productsFeatureKey, productsReducer),
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     StoreModule.forFeature(categoriesFeatureKey, categoriesReducer),
-    StoreModule.forFeature(productProfileFeatureKey, productProfileReducer)
+    StoreModule.forFeature(productProfileFeatureKey, productProfileReducer),
+    MatButtonModule,
+    StoreModule.forFeature(loginFeatureKey, loginReducer)
   ],
   providers: [
     ProductsService,
