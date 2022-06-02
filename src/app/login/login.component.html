@@ -1,0 +1,12 @@
+<mat-spinner *ngIf="(logging$|async);else logged" [diameter]="50"></mat-spinner>
+
+<ng-template #logged>
+    <div id="loginFormWrapper">
+        <h1>Login Page</h1>
+        <form [formGroup]="loginForm">
+            <input type="text" formControlName="username" placeholder="Enter your username..." #username/>
+            <input type="password" formControlName="password" placeholder="Enter your password..." #password/>
+            <button mat-flat-button color="primary" (click)="login(username.value, password.value)">Login</button>
+        </form>
+    </div>
+</ng-template>
