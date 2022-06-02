@@ -26,6 +26,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriesEffects, categoriesFeatureKey, categoriesReducer } from './categories/store';
 import { ProductProfileEffects, productProfileFeatureKey, productProfileReducer } from './product-profile/store';
+import { LoginComponent } from './login/login.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ProductProfileEffects, productProfileFeatureKey, productProfileReducer 
     CategoriesComponent,
     ProductProfileComponent,
     PageNotFoundComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
