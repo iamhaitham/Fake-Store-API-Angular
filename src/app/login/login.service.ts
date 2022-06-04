@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Token } from '../models/token.model';
 import { LoginActions, LoginSelectors } from './store';
 
 @Injectable({
