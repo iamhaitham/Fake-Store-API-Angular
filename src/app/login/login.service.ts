@@ -15,9 +15,8 @@ export class LoginService {
     private store: Store
   ) { }
 
-  login$(username: string, password: string): Observable<Token>{
+  login$(username: string, password: string): void{
     this.store.dispatch(LoginActions.LOGGING_IN({ username, password }));
-    return this.http.post<Token>('https://fakestoreapi.com/auth/login', { username, password });
   }
 
   logging$(): Observable<boolean> {

@@ -21,7 +21,8 @@ export class LoginEffects {
     ofType(LoginActions.LOGGING_IN),
     mergeMap((payload) => this.http.post<Token>('https://fakestoreapi.com/auth/login', { username: payload.username, password: payload.password })
       .pipe(
-        map(() => LoginActions.LOGGING_IN_SUCCESS()),
+        map((token) => LoginActions.LOGGING_IN_SUCCESS({ token })),
+        tap((t) => localStorage.setItem('token', t.token.token)),
         catchError((errorMessage: string) => of(LoginActions.LOGGING_IN_FAILURE({ errorMessage })))
       ))
     )

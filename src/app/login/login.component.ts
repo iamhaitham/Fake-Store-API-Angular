@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Observable, Subject, takeUntil, tap } from 'rxjs';
-import { Token } from '../models/token.model';
+import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
 
 @Component({
@@ -9,8 +8,7 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
-  destroyed$: Subject<boolean> = new Subject<boolean>(); 
+export class LoginComponent implements OnInit {
   logging$: Observable<boolean>;
 
   constructor(
@@ -29,16 +27,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   login(username: string, password: string): void {
     if(username === 'mor_2314' && password === '83r5^_'){
-     this.loginService.login$(username, password).pipe(
-       takeUntil(this.destroyed$),
-       tap((token: Token) => localStorage.setItem('token', token.token))
-     ).subscribe();
+     this.loginService.login$(username, password)
     }
-  }
-
-  ngOnDestroy(): void {
-    this.destroyed$.next(true);
-    this.destroyed$.complete();
   }
 
 }

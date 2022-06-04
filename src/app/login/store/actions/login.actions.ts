@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { Token } from 'src/app/models/token.model';
 
 export class LoginActions {
   static readonly LOGGING_IN = createAction(
@@ -7,7 +8,8 @@ export class LoginActions {
   );
 
   static readonly LOGGING_IN_SUCCESS = createAction(
-    '[Login] Logging in: Success'
+    '[Login] Logging in: Success',
+    props<{ token: Token }>()
   );
   
   static readonly LOGGING_IN_FAILURE = createAction(
