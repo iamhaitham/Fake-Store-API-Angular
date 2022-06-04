@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable, Subject, takeUntil, tap } from 'rxjs';
 import { Product } from '../models/product.model';
 import { ProductsService } from './products.service';
@@ -17,9 +18,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   constructor(
     private productsService: ProductsService,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private titleService: Title
   ) { 
     this.productsService.loadProducts$();
+    this.titleService.setTitle('Products');
   }
 
   ngOnInit(): void {

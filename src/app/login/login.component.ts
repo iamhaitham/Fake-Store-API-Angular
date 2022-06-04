@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
 
@@ -13,8 +14,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private fb: FormBuilder
-  ) { }
+    private fb: FormBuilder,
+    private titleService: Title
+  ) { 
+    this.titleService.setTitle('Login');
+  }
 
   ngOnInit(): void {
     this.logging$ = this.loginService.logging$();
