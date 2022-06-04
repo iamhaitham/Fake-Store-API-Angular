@@ -6,7 +6,7 @@
     height: 250px;
     position: absolute;
     top: 30%;
-    left: 40%;
+    /* left: 40%; */
 }
 
 #loginFormWrapper, form {
@@ -33,4 +33,46 @@ mat-spinner {
     position: absolute;
     left: 45%;
     top: 45%;
+}
+
+@media screen and (max-width: 1100px) {
+    #loginFormWrapper {
+        margin-left: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #loginFormWrapper {
+        margin-left: 37%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #loginFormWrapper {
+        margin-left: 37%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #loginFormWrapper {
+        margin-left: 22%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #loginFormWrapper {
+        margin-left: 18%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #loginFormWrapper {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #loginFormWrapper {
+        margin-left: 40%;
+    }
 }
