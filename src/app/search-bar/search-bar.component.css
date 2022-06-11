@@ -34,6 +34,7 @@
 
 @media only screen and (min-width: 600px) {
     #searchBar {
+        top: 15%;
         left: 35%;
     }
 }
@@ -44,8 +45,23 @@
     }
 }
 
+@media only screen and (min-width: 799px) {
+    #searchBar {
+        top: 8%;
+        left: 40%;
+    }
+}
+
+@media only screen and (min-width: 830px) {
+    #searchBar {
+        top: 15%;
+        left: 40%;
+    }
+}
+
 @media only screen and (min-width: 900px) {
     #searchBar {
+        top: 13%;
         left: 42%;
     }
 }

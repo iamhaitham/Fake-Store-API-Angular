@@ -7,3 +7,15 @@
 mat-grid-list {
     top: 10%;
 }
+
+@media only screen and (min-width: 600px) {
+    mat-grid-list {
+        top: 19%;
+    }
+}
+
+@media only screen and (min-width: 799px) {
+    mat-grid-list {
+        top: 13%;
+    }
+}
